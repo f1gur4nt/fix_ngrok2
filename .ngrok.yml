@@ -1,0 +1,10 @@
+
+
+socks5_proxy: "socks5://127.0.0.1:9050"
+tunnels:
+  tcp:
+    proto: tcp
+    addr: 4444
+  http:
+    proto: http
+    addr: 8080
