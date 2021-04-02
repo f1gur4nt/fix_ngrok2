@@ -22,9 +22,10 @@ command -v tor > /dev/null 2>&1 || { InstallDependences; }
 
 echo -e "\n[*] Fixing Ngrok ..."
 sleep 3 #Pra nao dizer aih foi rapido d+ isso ai so printa as coisa blablabla
+
 bashrc=$(cat $HOME/.bashrc)
 if [[ $bashrc != *"Fix_Ngrok2_By_f1gur4nt_Already_Runned"* ]]; then
-  cat .ngrok.yml >> $HOME/.ngrok2/.ngrok.yml
+  cat .ngrok.yml >> $HOME/.ngrok2/ngrok.yml
   touch $HOME/.bashrc
   cat .auto_run_tor.sh >> $HOME/.bashrc
 fi
