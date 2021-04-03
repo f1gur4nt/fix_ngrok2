@@ -26,3 +26,4 @@ Tested in:
 Testado em:
       Termux 
  
+My ProtonMail: zuelbilah2@protonmail.com
