@@ -25,5 +25,6 @@ How you can see, ngrok are working!
 Tested in:
 Testado em:
       Termux 
- 
+      Linux Mint 
+
 My ProtonMail: zuelbilah2@protonmail.com
