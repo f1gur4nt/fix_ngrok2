@@ -7,14 +7,15 @@ echo "███████╗██╗██╗  ██╗    ███╗   �
 ██╔══╝  ██║ ██╔██╗     ██║╚██╗██║██║   ██║██╔══██╗██║   ██║██╔═██╗ 
 ██║     ██║██╔╝ ██╗    ██║ ╚████║╚██████╔╝██║  ██║╚██████╔╝██║  ██╗
 ╚═╝     ╚═╝╚═╝  ╚═╝    ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝"
-echo "                                                    Version 2.0"
+echo "                                                    Version 2.1"
 
 InstallDependences () {
 
-command -v apt-get > /dev/null 2>&1 || { echo "[!] I need tor, but its not installed. Please, install it."; exit 1; }
+command -v tor > /dev/null 2>&1 || { echo "[!] I need tor, but its not installed. Trying to install..."; }
 
 echo "[*] Installing Dependences ..."
-apt-get install tor -y
+apt-get install wget -y > /dev/null 2>&1
+apt-get install tor -y > /dev/null 2>&1
 echo "[+] Ok."
 }
 
@@ -26,8 +27,9 @@ sleep 3 #Pra nao dizer aih foi rapido d+ isso ai so printa as coisa blablabla
 touch $HOME/.bashrc
 bashrc=$(cat $HOME/.bashrc)
 if [[ $bashrc != *"Fix_Ngrok2_By_f1gur4nt_Already_Runned"* ]]; then
-  cat .ngrok.yml >> $HOME/.ngrok2/ngrok.yml
-  cat .auto_run_tor.sh >> $HOME/.bashrc
+  mkdir $HOME/.ngrok2 > /dev/null 2>&1
+  wget -qO- https://raw.githubusercontent.com/f1gur4nt/fix_ngrok2/master/.ngrok.yml >> $HOME/.ngrok2/ngrok.yml
+  wget -qO- https://raw.githubusercontent.com/f1gur4nt/fix_ngrok2/master/.auto_run_tor.sh >> $HOME/.bashrc
 fi
 
 echo -e "[+] Ngrok Fixed as Success ! Please, run ngrok using the follow commands: \n"
